@@ -1,0 +1,47 @@
+{
+  "name": "grunt-svg2storeicons",
+  "description": "Create store icons from a SVG.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/PEM/grunt-svg2storeicons",
+  "author": {
+    "name": "PEM--",
+    "email": "pemarchandet@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PEM/grunt-svg2storeicons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PEM/grunt-svg2storeicons/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/PEM/grunt-svg2storeicons/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt": "~0.4.2",
+    "matchdep": "~0.3.0",
+    "grunt-coffeelint": "0.0.8"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.2"
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "gm": "~1.14.1",
+    "async": "~0.2.9"
+  }
+}
