@@ -98,7 +98,7 @@ grunt.initConfig({
 The main plugin is written and its tests are written in CoffeeScript. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/). Feel free to contribute.
 
 ## Release History
-* 0.1.3: 12/26/2013: Better doc support for npmjs.org [PEM--](https://github.com/PEM--)
+* 0.1.3 & 0.1.4: 12/26/2013: Better doc support for npmjs.org [PEM--](https://github.com/PEM--)
 * 0.1.2: 12/25/2013: Minor typo and better antialiasing flow chart [PEM--](https://github.com/PEM--)
 * 0.1.1: 12/25/2013: PR on node-gm for transparent background: [PEM--](https://github.com/PEM--)
 * 0.1.0: 12/24/2013: Initial commit: [PEM--]( https://github.com/PEM-- )
