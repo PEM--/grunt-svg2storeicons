@@ -95,8 +95,8 @@ grunt.initConfig({
 The main plugin is written and its tests are written in CoffeeScript. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/). Feel free to contribute.
 
 ## Release History
-* 0.1.0: 12/25/2013: Initial commit: PEM--
+* 0.1.1: 12/25/2013: PR on node-gm for transparent background: PEM--
+* 0.1.0: 12/24/2013: Initial commit: PEM--
 
 ## Known issue
-* For the moment, **node-gm** doesn't handle transparent background. A PR has been submitted.
 * Tests needs to be done.
