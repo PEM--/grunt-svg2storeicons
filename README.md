@@ -1,7 +1,7 @@
 # grunt-svg2storeicons
-Create icons for mobile and tablet applications for all stores icons from a simple squared SVG.
+Create icons for mobile and tablet applications for all stores from a simple squared SVG.
 
-![Build flow](doc/flowchart.jpg "Build flow")
+![Build flow](doc/flowchart.png "Build flow")
 
 ## Getting Started
 ### GraphicsMagick
@@ -95,8 +95,9 @@ grunt.initConfig({
 The main plugin is written and its tests are written in CoffeeScript. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/). Feel free to contribute.
 
 ## Release History
-* 0.1.1: 12/25/2013: PR on node-gm for transparent background: PEM--
-* 0.1.0: 12/24/2013: Initial commit: PEM--
+* 0.1.2: 12/25/2013: Minor typo and better antialiasing flow chart [PEM--](https://github.com/PEM--)
+* 0.1.1: 12/25/2013: PR on node-gm for transparent background: [PEM--](https://github.com/PEM--)
+* 0.1.0: 12/24/2013: Initial commit: [PEM--]( https://github.com/PEM-- )
 
 ## Known issue
 * Tests needs to be done.
