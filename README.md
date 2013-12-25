@@ -4,7 +4,7 @@
 
 Create icons for mobile and tablet applications for all stores from a simple squared SVG.
 
-![Build flow](https://github.com/PEM--/grunt-svg2storeicons/blob/master/doc/flowchart.png "Build flow")
+![Build flow](doc/flowchart.png "Build flow")
 
 ## Getting Started
 ### GraphicsMagick
