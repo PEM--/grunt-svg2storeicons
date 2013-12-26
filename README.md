@@ -1,6 +1,6 @@
 # grunt-svg2storeicons
 
-[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://secure.travis-ci.org/PEM--/grunt-svg2storeicons.png)](http://travis-ci.org/PEM--/grunt-svg2storeicons) [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Create icons for mobile and tablet applications for all stores from a simple squared SVG.
 
@@ -100,6 +100,7 @@ grunt.initConfig({
 The main plugin is written and its tests are written in CoffeeScript. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/). Feel free to contribute.
 
 ## Release History
+* 0.1.6: 12/26/2013: Travis-CI integration: [PEM--](https://github.com/PEM--)
 * 0.1.5: 12/26/2013: Default icon and better tests: [PEM--](https://github.com/PEM--)
 * 0.1.3 & 0.1.4: 12/26/2013: Better doc support for npmjs.org [PEM--](https://github.com/PEM--)
 * 0.1.2: 12/25/2013: Minor typo and better antialiasing flow chart [PEM--](https://github.com/PEM--)
