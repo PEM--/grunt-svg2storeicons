@@ -23,7 +23,7 @@ module.exports = (grunt) ->
       all: [
         'Gruntfile.coffee'
         'tasks/*.coffee'
-        #"<%= nodeunit.tests %>"
+        'test/*.coffee'
       ]
       options: coffeeLintOptions
     
@@ -45,8 +45,12 @@ module.exports = (grunt) ->
           profiles: ['blackberry']
     
     # Unit tests.
-    nodeunit:
-      tests: ["test/*_test.js"]
+    mochaTest:
+      test:
+        options:
+          reporter: 'spec'
+          require: 'coffee-script'
+        src: ['test/*.coffee']
   
   # Actually load this plugin's task(s).
   grunt.loadTasks "tasks"
@@ -56,7 +60,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'test', [
     'clean'
     'svg2storeicons'
-    #'nodeunit'
+    'mochaTest'
   ]
   
   # By default, lint and run all tests.

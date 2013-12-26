@@ -6,6 +6,8 @@ Create icons for mobile and tablet applications for all stores from a simple squ
 
 ![Build flow](https://raw.github.com/PEM--/grunt-svg2storeicons/master/doc/flowchart.png "Build flow")
 
+> In bold, the chart represents the user provided options. Normal texts are the generated sub file paths.
+
 ## Getting Started
 ### GraphicsMagick
 This plugin requires GraphicsMagick.
@@ -46,7 +48,7 @@ grunt.initConfig({
       // Source file: the SVG.
       src: 'app/res/icon.svg',
       // Destination directory where are stored all app icons
-      dest: 'www/res/icon',
+      dest: 'www/',
       // Optionnal, it produces icons for every stores if not specified
       options: {
         // A  list of stores
@@ -60,9 +62,9 @@ grunt.initConfig({
 ### Options
 #### options.profiles
 Type: `Array of String`
-Default value: `['ios', 'android', 'windows-phone', 'blackberry', 'webos', 'bada', 'tizen']`
+Default value: `['default', 'ios', 'android', 'windows-phone', 'blackberry', 'webos', 'bada', 'tizen']`
 
-Specify the stores that you target. The full list is provided as default.
+Specify the stores that you target. The full list is provided as default. The default target produce a single `icon.png` at the root of the specified destination directory.
 
 ### Usage Examples
 #### Default Options
@@ -72,22 +74,22 @@ grunt.initConfig({
   svg2storeicons: {
     all_stores: {
       src: 'app/res/icon.svg',
-      dest: 'www/res/icon'
+      dest: 'www/'
     }
   }
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to only target Android and iOS.
+In this example, custom options are used to create the default icon and only target Android and iOS.
 ```js
 grunt.initConfig({
   svg2storeicons: {
     google_play_and_app_store: {
       src: 'app/res/icon.svg',
-      dest: 'www/res/icon',
+      dest: 'www/',
       options: {
-        profiles: ['android', 'ios']
+        profiles: ['default', android', 'ios']
       }
     }
   }
@@ -98,10 +100,11 @@ grunt.initConfig({
 The main plugin is written and its tests are written in CoffeeScript. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/). Feel free to contribute.
 
 ## Release History
+* 0.1.5: 12/26/2013: Default icon and better tests: [PEM--](https://github.com/PEM--)
 * 0.1.3 & 0.1.4: 12/26/2013: Better doc support for npmjs.org [PEM--](https://github.com/PEM--)
 * 0.1.2: 12/25/2013: Minor typo and better antialiasing flow chart [PEM--](https://github.com/PEM--)
 * 0.1.1: 12/25/2013: PR on node-gm for transparent background: [PEM--](https://github.com/PEM--)
 * 0.1.0: 12/24/2013: Initial commit: [PEM--]( https://github.com/PEM-- )
 
 ## Known issue
-* Tests are not sufficient.
+* N/A.

@@ -21,45 +21,65 @@ async = require 'async'
 #  resolution schemes.
 ###
 PROFILES = {
+  # Default
+  'default':
+    dir: '',
+    icons: [
+      { name: 'icon.png', size: 128 }
+    ]
   # iOS (Retina and legacy resolutions)
-  'ios': [
-    { name: 'icon57.png', size: 57 }
-    { name: 'icon57-2x.png', size: 114 }
-    { name: 'icon72.png', size: 72 }
-    { name: 'icon-72-2x.png', size: 144 }
-  ]
+  'ios':
+    dir: 'res/icon/ios/'
+    icons: [
+      { name: 'icon57.png', size: 57 }
+      { name: 'icon57-2x.png', size: 114 }
+      { name: 'icon72.png', size: 72 }
+      { name: 'icon-72-2x.png', size: 144 }
+    ]
   # Android
-  'android': [
-    { name: 'icon-36-ldpi.png', size: 36 }
-    { name: 'icon-48-mdpi.png', size: 48 }
-    { name: 'icon-72-hdpi.png', size: 72 }
-    { name: 'icon-96-xhdpi.png', size: 96 }
-  ]
+  'android':
+    dir: 'res/icon/android/'
+    icons: [
+      { name: 'icon-36-ldpi.png', size: 36 }
+      { name: 'icon-48-mdpi.png', size: 48 }
+      { name: 'icon-72-hdpi.png', size: 72 }
+      { name: 'icon-96-xhdpi.png', size: 96 }
+    ]
   # Windows Phone, Tablets and Desktop (Windows 8)
-  'windows-phone': [
-    { name: 'icon-48.png', size: 48 }
-    { name: 'icon-62-tile.png', size: 62 }
-    { name: 'icon-173-tile.png', size: 173 }
-  ]
+  'windows-phone':
+    dir: 'res/icon/windows-phone/'
+    icons: [
+      { name: 'icon-48.png', size: 48 }
+      { name: 'icon-62-tile.png', size: 62 }
+      { name: 'icon-173-tile.png', size: 173 }
+    ]
   # Blackberry
-  'blackberry': [
-    { name: 'icon-80.png', size: 80 }
-  ]
+  'blackberry':
+    dir: 'res/icon/blackberry/'
+    icons: [
+      { name: 'icon-80.png', size: 80 }
+    ]
   # WebOS
-  'webos': [
-    { name: 'icon-64.png', size: 64 }
-  ]
+  'webos':
+    dir: 'res/icon/webos/'
+    icons: [
+      { name: 'icon-64.png', size: 64 }
+    ]
   # All Bada's icon's sets
-  'bada': [
-    { name: 'icon-128.png', size: 128 }
-    { name: 'icon-48-type5.png', size: 48 }
-    { name: 'icon-50-type3.png', size: 50 }
-    { name: 'icon-80-type4.png', size: 80 }
-  ]
+  'bada':
+    dir: 'res/icon/bada/'
+    icons: [
+      { name: 'icon-128.png', size: 128 }
+      { name: 'icon-48-type5.png', size: 48 }
+      { name: 'icon-50-type3.png', size: 50 }
+      { name: 'icon-80-type4.png', size: 80 }
+    ]
   # Tizen
-  'tizen': [
-    { name: 'icon-128.png', size: 128 }
-  ]
+  'tizen':
+    dir: 'res/icon/tizen/'
+    icons: [
+      { name: 'icon-128.png', size: 128 }
+    ]
 }
 
 module.exports = (grunt) ->
@@ -70,7 +90,7 @@ module.exports = (grunt) ->
     # Default options are set to produce all stores icons.
     # This setting can be surcharged by user.
     options = @options profiles: [
-      'ios', 'android', 'windows-phone'
+      'default', 'ios', 'android', 'windows-phone'
       'blackberry', 'webos', 'bada', 'tizen'
     ] # Check existence of source file
     return done new Error "Only one source file is allowed: #{@files}" \
@@ -83,20 +103,21 @@ module.exports = (grunt) ->
     grunt.file.mkdir DEST
     # Iterate over each selected profile
     async.each options.profiles, (profile, nextProfile) ->
-      grunt.log.ok "Profile: #{profile}"
+      grunt.log.debug "Profile: #{profile}"
       # Create a directories for each profile
-      grunt.file.mkdir "#{DEST}/#{profile}"
-      async.each PROFILES[profile], (destIcon, nextIcon) ->
+      grunt.file.mkdir "#{DEST}/#{PROFILES[profile].dir}"
+      async.each PROFILES[profile].icons, (destIcon, nextIcon) ->
         # Create the icon in the appropriate directory.
         # The background icon is transparent.
         # The density of the SVG is multiply by 4 so that it gets
         #  antialiased when resized and written to disk.
-        grunt.log.ok "#{SRC} -> #{DEST}/#{profile}/#{destIcon.name}"
+        grunt.log.debug "#{SRC} -> ",
+          "#{DEST}/#{PROFILES[profile].dir}/#{destIcon.name}"
         gm(SRC).
           background('none').
           density(destIcon.size*4, destIcon.size*4).
           resize(destIcon.size, destIcon.size, '!').
-          write "#{DEST}/#{profile}/#{destIcon.name}", (err) ->
+          write "#{DEST}/#{PROFILES[profile].dir}/#{destIcon.name}", (err) ->
             return nextIcon err if err
             nextIcon()
       , nextProfile
