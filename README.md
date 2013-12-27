@@ -2,7 +2,10 @@
 
 [![Available on NPM](https://nodei.co/npm/grunt-svg2storeicons.png?compact=true)](https://npmjs.org/package/grunt-svg2storeicons/)
 
-[![Build Status](https://secure.travis-ci.org/PEM--/grunt-svg2storeicons.png)](http://travis-ci.org/PEM--/grunt-svg2storeicons)  [![Dependencies status](https://david-dm.org/PEM--/grunt-svg2storeicons.png)](https://github.com/PEM--/grunt-svg2storeicons)  [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
+[![Build Status](https://secure.travis-ci.org/PEM--/grunt-svg2storeicons.png)](http://travis-ci.org/PEM--/grunt-svg2storeicons)
+[![Dependencies status](https://david-dm.org/PEM--/grunt-svg2storeicons.png)](https://david-dm.org/PEM--/grunt-svg2storeicons)
+[![Dev dependencies status](https://david-dm.org/PEM--/grunt-svg2storeicons/dev-status.png)](https://david-dm.org/PEM--/grunt-svg2storeicons/#info=devDependencies)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 
 Create icons for mobile and tablet applications for all stores from a simple squared SVG.
 
