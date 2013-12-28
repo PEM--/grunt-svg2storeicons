@@ -12,6 +12,8 @@
 gm = require 'gm'
 # Async is used to transform this task as an asynchronous task
 async = require 'async'
+# Path from NodeJS app is used to merge directory and sub drectories.
+path = require 'path'
 
 ###
 # All profiles for every app stores covered by PhoneGap are stored hereafter
@@ -106,20 +108,23 @@ module.exports = (grunt) ->
     async.each options.profiles, (profile, nextProfile) ->
       grunt.log.debug "Profile: #{profile}"
       # Create a directories for each profile
-      grunt.file.mkdir "#{DEST}/#{PROFILES[profile].dir}"
+      targetDir = path.join DEST, PROFILES[profile].dir
+      grunt.file.mkdir targetDir
+      # Iterate over each splashcreen
       async.each PROFILES[profile].icons, (destIcon, nextIcon) ->
         # Create the icon in the appropriate directory.
         # The background icon is transparent.
         # The density of the SVG is multiply by 4 so that it gets
         #  antialiased when resized and written to disk.
-        grunt.log.debug "#{SRC} -> ",
-          "#{DEST}/#{PROFILES[profile].dir}/#{destIcon.name}"
+        targetFile = path.join targetDir, destIcon.name
+        grunt.log.debug "#{SRC} -> #{targetFile}"
         gm(SRC).
           background('none').
           density(destIcon.size*4, destIcon.size*4).
           resize(destIcon.size, destIcon.size, '!').
-          write "#{DEST}/#{PROFILES[profile].dir}/#{destIcon.name}", (err) ->
+          write targetFile, (err) ->
             return nextIcon err if err
+            grunt.log.ok "Icon #{targetFile} created."
             nextIcon()
       , nextProfile
     , (err) ->
