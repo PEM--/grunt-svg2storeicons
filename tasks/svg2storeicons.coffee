@@ -33,9 +33,9 @@ PROFILES = {
   'ios':
     dir: 'res/icon/ios/'
     icons: [
-      { name: 'icon57.png', size: 57 }
-      { name: 'icon57-2x.png', size: 114 }
-      { name: 'icon72.png', size: 72 }
+      { name: 'icon-57.png', size: 57 }
+      { name: 'icon-57-2x.png', size: 114 }
+      { name: 'icon-72.png', size: 72 }
       { name: 'icon-72-2x.png', size: 144 }
     ]
   # Android
