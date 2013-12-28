@@ -67,7 +67,7 @@ grunt.initConfig({
 ### Options
 #### options.profiles
 Type: `Array of String`
-Default value: `['default', 'ios', 'android', 'windows-phone', 'blackberry', 'webos', 'bada', 'tizen']`
+Default value: `['default', 'android', 'bada', 'blackberry', 'ios', 'tizen', 'webos', 'windows-phone']`
 
 Specify the stores that you target. The full list is provided as default. The default target produce a single `icon.png` at the root of the specified destination directory.
 
@@ -94,7 +94,7 @@ grunt.initConfig({
       src: 'app/res/icon.svg',
       dest: 'www/',
       options: {
-        profiles: ['default', android', 'ios']
+        profiles: ['default', 'android', 'ios']
       }
     }
   }
@@ -105,6 +105,7 @@ grunt.initConfig({
 The main plugin is written and its tests are written in CoffeeScript. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/). Feel free to contribute.
 
 ## Release History
+* 0.1.9: XX/XX/201X: Typos: [PEM--](https://github.com/PEM--)
 * 0.1.8: 12/27/2013: Dependency checking: [PEM--](https://github.com/PEM--)
 * 0.1.7: 12/26/2013: Add an NPM badge for easing access: [PEM--](https://github.com/PEM--)
 * 0.1.6: 12/26/2013: Travis-CI integration: [PEM--](https://github.com/PEM--)
@@ -115,4 +116,5 @@ The main plugin is written and its tests are written in CoffeeScript. In lieu of
 * 0.1.0: 12/24/2013: Initial commit: [PEM--]( https://github.com/PEM-- )
 
 ## Known issue
-* N/A.
+* SVG containing gradient failed to be converted by GraphicsMagick (same thing for ImageMagick).
+* SVG containing DataURI with Base64 encoding on JPEG or PNG failed to be converted by GraphicsMagick (same thing for ImageMagick).

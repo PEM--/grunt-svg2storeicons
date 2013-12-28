@@ -10,7 +10,7 @@
 
 # GraphicsMagick (node-gm) is used for every conversion and resizing tasks
 gm = require 'gm'
-# Async is used to transfomr this task as an asynchronous task
+# Async is used to transform this task as an asynchronous task
 async = require 'async'
 
 ###
@@ -92,7 +92,8 @@ module.exports = (grunt) ->
     options = @options profiles: [
       'default', 'ios', 'android', 'windows-phone'
       'blackberry', 'webos', 'bada', 'tizen'
-    ] # Check existence of source file
+    ]
+    # Check existence of source file
     return done new Error "Only one source file is allowed: #{@files}" \
       if @files.length isnt 1 or @files[0].orig.src.length isnt 1
     SRC = @files[0].orig.src[0]
