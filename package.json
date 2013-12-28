@@ -25,7 +25,7 @@
     "node": ">= 0.10.4"
   },
   "scripts": {
-    "test": "node_modules/grunt-cli/bin/grunt"
+    "test": "grunt"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
