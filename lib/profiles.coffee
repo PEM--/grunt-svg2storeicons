@@ -27,12 +27,13 @@ module.exports = (config) ->
     ]
   # Android
   'android':
-    dir: path.join 'res', 'icon', 'android'
+    dir: path.join 'platforms', 'android', 'res'
     icons: [
-      { name: 'icon-36-ldpi.png', size: 36 }
-      { name: 'icon-48-mdpi.png', size: 48 }
-      { name: 'icon-72-hdpi.png', size: 72 }
-      { name: 'icon-96-xhdpi.png', size: 96 }
+      { name: (path.join 'drawable-ldpi', 'icon.png'), size: 36 }
+      { name: (path.join 'drawable-mdpi', 'icon.png'), size: 48 }
+      { name: (path.join 'drawable-hdpi', 'icon.png'), size: 72 }
+      { name: (path.join 'drawable-xhdpi', 'icon.png'), size: 96 }
+      { name: (path.join 'drawable', 'icon.png'), size: 96 }
     ]
   # All Bada's icon's sets
   'bada':

@@ -48,6 +48,11 @@ module.exports = (grunt) ->
       grunt.file.mkdir targetDir
       # Iterate over each splashcreen
       async.each PROFILES[profile].icons, (destIcon, nextIcon) ->
+        # A sub sub path may be provided as part of the destIcon's name.
+        # Therefore, the appropriate directory must be created.
+        subsubpath = path.dirname destIcon.name
+        if subsubpath isnt '.'
+          grunt.file.mkdir path.join targetDir, subsubpath
         # Create the icon in the appropriate directory.
         # The background icon is transparent.
         # The density of the SVG is multiply by 4 so that it gets
