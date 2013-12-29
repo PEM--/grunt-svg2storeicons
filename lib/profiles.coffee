@@ -8,6 +8,7 @@
 
 'use strict'
 
+# Path from NodeJS app is used to merge directory and sub drectories.
 path = require 'path'
 
 ###
