@@ -14,75 +14,8 @@ gm = require 'gm'
 async = require 'async'
 # Path from NodeJS app is used to merge directory and sub drectories.
 path = require 'path'
-
-###
-# All profiles for every app stores covered by PhoneGap are stored hereafter
-# The name of the icon is used as the final name under rendered icon.
-# The size represents a squared icon and is provided as-is to avoid name
-#  as the naming conventions from PhoneGap may vary and produce weird
-#  resolution schemes.
-###
-PROFILES = {
-  # Default
-  'default':
-    dir: '',
-    icons: [
-      { name: 'icon.png', size: 128 }
-    ]
-  # iOS (Retina and legacy resolutions)
-  'ios':
-    dir: 'res/icon/ios/'
-    icons: [
-      { name: 'icon-57.png', size: 57 }
-      { name: 'icon-57-2x.png', size: 114 }
-      { name: 'icon-72.png', size: 72 }
-      { name: 'icon-72-2x.png', size: 144 }
-    ]
-  # Android
-  'android':
-    dir: 'res/icon/android/'
-    icons: [
-      { name: 'icon-36-ldpi.png', size: 36 }
-      { name: 'icon-48-mdpi.png', size: 48 }
-      { name: 'icon-72-hdpi.png', size: 72 }
-      { name: 'icon-96-xhdpi.png', size: 96 }
-    ]
-  # Windows Phone, Tablets and Desktop (Windows 8)
-  'windows-phone':
-    dir: 'res/icon/windows-phone/'
-    icons: [
-      { name: 'icon-48.png', size: 48 }
-      { name: 'icon-62-tile.png', size: 62 }
-      { name: 'icon-173-tile.png', size: 173 }
-    ]
-  # Blackberry
-  'blackberry':
-    dir: 'res/icon/blackberry/'
-    icons: [
-      { name: 'icon-80.png', size: 80 }
-    ]
-  # WebOS
-  'webos':
-    dir: 'res/icon/webos/'
-    icons: [
-      { name: 'icon-64.png', size: 64 }
-    ]
-  # All Bada's icon's sets
-  'bada':
-    dir: 'res/icon/bada/'
-    icons: [
-      { name: 'icon-128.png', size: 128 }
-      { name: 'icon-48-type5.png', size: 48 }
-      { name: 'icon-50-type3.png', size: 50 }
-      { name: 'icon-80-type4.png', size: 80 }
-    ]
-  # Tizen
-  'tizen':
-    dir: 'res/icon/tizen/'
-    icons: [
-      { name: 'icon-128.png', size: 128 }
-    ]
-}
+# Get all profiles as constants
+PROFILES = require './profiles'
 
 module.exports = (grunt) ->
   grunt.registerMultiTask 'svg2storeicons', \
