@@ -1,7 +1,7 @@
 {
   "name": "grunt-svg2storeicons",
   "description": "Create store icons from a SVG.",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "homepage": "https://github.com/PEM--/grunt-svg2storeicons",
   "author": {
     "name": "Pierre-Eric Marchandet (PEM--)",
@@ -46,6 +46,7 @@
     "svg",
     "mobile",
     "phonegap",
+    "cordova",
     "android",
     "ios",
     "windows"
