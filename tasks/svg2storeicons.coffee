@@ -14,8 +14,6 @@ gm = require 'gm'
 async = require 'async'
 # Path from NodeJS app is used to merge directory and sub drectories.
 path = require 'path'
-# Get all profiles as constants
-PROFILES = require './profiles'
 
 module.exports = (grunt) ->
   grunt.registerMultiTask 'svg2storeicons', \
@@ -24,10 +22,15 @@ module.exports = (grunt) ->
     done = @async()
     # Default options are set to produce all stores icons.
     # This setting can be surcharged by user.
-    options = @options profiles: [
-      'default', 'ios', 'android', 'windows-phone'
-      'blackberry', 'webos', 'bada', 'tizen'
-    ]
+    options = @options {
+      prjName: 'Test'
+      profiles: [
+        'default', 'ios', 'android', 'windows-phone'
+        'blackberry', 'webos', 'bada', 'tizen'
+      ]
+    }
+    # Get all profiles as constants
+    PROFILES = (require '../lib/profiles') options
     # Check existence of source file
     return done new Error "Only one source file is allowed: #{@files}" \
       if @files.length isnt 1 or @files[0].orig.src.length isnt 1
