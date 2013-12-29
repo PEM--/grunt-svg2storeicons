@@ -71,7 +71,7 @@ grunt.initConfig({
 Type: `String`
 Default value: `Test`
 
-Specify your project's name. It is mostly used for iOS as the `platforms/ios` directory used for building PhoneGap/Cordova iOS target uses it.
+Specify your project's name. It is mostly used for iOS as the `platforms/ios` sub directory. PhoneGap/Cordova iOS target uses it when building the application.
 
 #### options.profiles
 Type: `Array of String`
