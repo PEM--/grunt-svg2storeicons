@@ -5,7 +5,8 @@ script: "npm test"
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -qq graphicsmagick
-  - npm install -g grunt-cli
+  - npm i grunt-cli mocha
+  - npm i
 cache:
   - apt
   - directories
