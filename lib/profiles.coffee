@@ -56,6 +56,7 @@ module.exports = (config) ->
     icons: [
       { name: 'icon-small.png', size: 29 }
       { name: 'icon-small@2x.png', size: 58 }
+      { name: 'icon-small@3x.png', size: 87 }
       { name: 'icon.png', size: 57 }
       { name: 'icon@2x.png', size: 114 }
       { name: 'icon-40.png', size: 40 }
@@ -71,6 +72,7 @@ module.exports = (config) ->
       { name: 'icon-72@2x.png', size: 144 }
       { name: 'icon-76.png', size: 76 }
       { name: 'icon-76@2x.png', size: 152 }
+      { name: 'icon-83.5@2x.png', size: 167 }
     ]
   # Tizen
   'tizen':
