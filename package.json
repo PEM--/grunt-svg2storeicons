@@ -1,7 +1,7 @@
 {
   "name": "grunt-svg2storeicons",
   "description": "Create store icons from a SVG.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "homepage": "https://github.com/PEM--/grunt-svg2storeicons",
   "license": "MIT",
   "author": {
