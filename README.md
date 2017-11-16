@@ -113,6 +113,8 @@ grunt.initConfig({
 The main plugin is written and its tests are written in CoffeeScript. In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/). Feel free to contribute.
 
 ## Release History
+* 0.3.2: 11/16/2017: iOS 11 icon-1024px
+* 0.3.1: 03/23/2017: iOS @3x notification and iPad Pro icon
 * 0.3.X: 05/23/2016: Grunt 1.0.0
 * 0.2.2: 02/05/2014: Version bump: [PEM--](https://github.com/PEM--)
 * 0.2.0 & 0.2.1: 12/29/2013: Compatibility with PhoneGap/Cordova 0.3.X: [PEM--](https://github.com/PEM--)
